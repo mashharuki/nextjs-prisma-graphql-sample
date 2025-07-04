@@ -1,5 +1,6 @@
 version: '3.9'
 services:
+  # DBサーバー
   db:
     image: postgres:15.1
     ports:
@@ -7,9 +8,10 @@ services:
     volumes:
       - postgres:/var/lib/postgresql/data
     environment:
-      - POSTGRES_USER=user
+      - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=password
       - POSTGRES_DB=nextjs-prisma-graphql-codegen-sample
+  # メールサーバー
   mailhog:
     image: mailhog/mailhog
     ports:
